@@ -1,0 +1,41 @@
+import sys, time
+class Dirty(object):
+    def __init__(self):
+        self.main=""
+        self.a=[' C====8','C====8','====8','===8','==8','===8','====8','=====8']
+        self.b=[' C====8','  C====8', '    C====8','    C===8','    C====8','   ~C====8','  ~~C====8',' ~~~C====8']
+        self.head="     C"
+        self.mid="="
+        self.last="8"        
+    def big(self):        
+        for i in range(1,5):
+            sys.stdout.write('  B')
+            self.main=self.head+self.mid*i+self.last
+            sys.stdout.write(self.main)
+            sys.stdout.write(' ' * 10 + '\r')
+            sys.stdout.flush()
+            time.sleep(0.5)
+    def step(self):
+        for j in range(10):                   
+            for i in range(7):
+                sys.stdout.write('  B')
+                sys.stdout.write(self.a[i].format(i))
+                sys.stdout.write(' ' * 20 + '\r')                
+                sys.stdout.flush()                
+                time.sleep(0.1)
+    def shot(self):                         
+        for i in range(8):
+            sys.stdout.write('  B')
+            sys.stdout.write(self.b[i].format(i))
+            sys.stdout.write(' ' * 20 + '\r')          
+            sys.stdout.flush()          
+            time.sleep(1)
+        time.sleep
+        sys.stdout.write(' ' * 20 + '\r')
+        sys.stdout.write('Next')
+        sys.stdout.flush()
+if __name__=="__main__":
+    dirty=Dirty()
+    dirty.big()
+    dirty.step()
+    dirty.shot()
